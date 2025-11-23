@@ -1,0 +1,32 @@
+sequenceDiagram 
+    participant User
+    participant System
+
+    browser -> server: GET HTML
+    activate server
+    server -> browser: HTML
+    deactivate server
+
+    browser -> server: GET CSS
+    activate server
+    server -> browser: CSS
+    deactivate server
+
+    browser -> server: GET JS
+    activate server
+    server -> browser: JS
+    deactivate server
+
+    browser -> server: GET JSON
+    activate server
+    server -> browser: JSON
+    deactivate server
+
+    user -> server: new note
+    activate server
+    activate callback
+    server -> database: save note
+    database -> server: note saved
+    server -> callback: render note
+    callback -> browser: rendered note
+    deactivate server
