@@ -1,0 +1,28 @@
+sequenceDiagram 
+    participant User
+    participant System
+
+    browser -> server: GET HTML
+    activate server
+    server -> browser: HTML
+    deactivate server
+
+    browser -> server: GET CSS
+    activate server
+    server -> browser: CSS
+    deactivate server
+
+    browser -> server: GET JS
+    activate server
+    server -> browser: JS
+    deactivate server
+
+    browser -> server: GET JSON
+    activate server
+    server -> browser: JSON
+    deactivate server
+
+    browser -> server: GET images
+    activate server
+    server -> browser: images
+    deactivate server
